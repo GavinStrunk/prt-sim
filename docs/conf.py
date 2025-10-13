@@ -45,7 +45,7 @@ intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'scipy': ('http://docs.scipy.org/doc/scipy/reference/', None),
                        'matplotlib': ('http://matplotlib.org/', None),
                        'torch': ('https://pytorch.org/docs/stable/', None),
-                       'jax': ('https://jax.readthedocs.io/en/latest/', None)}
+                       }
 
 source_suffix = {
     '.rst': 'restructuredtext',

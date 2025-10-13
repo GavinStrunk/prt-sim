@@ -3,7 +3,7 @@ import random
 import os
 from typing import Tuple, Optional
 from prt_sim.jhu.base import BaseEnvironment
-from prt_sim.rendering import GridworldRender
+from prt_sim.common.grid_rendering import GridworldRender
 
 
 def get_state_index(x, y, z):

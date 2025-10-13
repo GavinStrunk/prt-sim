@@ -2,7 +2,7 @@ import numpy as np
 import os
 from typing import Optional, Tuple
 from prt_sim.jhu.base import BaseEnvironment
-from prt_sim.rendering import GridworldRender
+from prt_sim.common.grid_rendering import GridworldRender
 
 
 class RobotGame(BaseEnvironment):

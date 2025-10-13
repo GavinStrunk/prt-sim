@@ -61,4 +61,5 @@ def test_bandits_execute_action():
     env.reset()
 
     _, reward, _ = env.execute_action(action=1)
+    
     assert pytest.approx(reward, abs=1e-2) == 2.64
