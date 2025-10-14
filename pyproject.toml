@@ -10,8 +10,8 @@ requires-python = ">=3.11"
 dependencies = [
     "matplotlib>=3.10.1",
     "numpy>=2.2.3",
-    "prt-datasets",
-    "prt-nn",
+    "prt-datasets>=0.1.1",
+    "prt-nn>=0.1.1",
     "pygame>=2.6.1",
 ]
 
@@ -32,11 +32,6 @@ gymnasium = [
     "torchvision>=0.23.0",
     "ultralytics>=8.3.201",
 ]
-
-[tool.uv.sources]
-prt-nn = { path = "../prt-nn", editable = true }
-prt-datasets = { path = "../prt-datasets", editable = true }
-
 
 # --- Gymnasium plugin entry points ---
 [project.entry-points."gymnasium.envs"]

@@ -1292,8 +1292,8 @@ wheels = [
 
 [[package]]
 name = "prt-datasets"
-version = "0.1.0"
-source = { editable = "../prt-datasets" }
+version = "0.1.1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lightning" },
     { name = "numpy" },
@@ -1301,36 +1301,24 @@ dependencies = [
     { name = "requests" },
     { name = "torch" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "lightning", specifier = ">=2.5.5" },
-    { name = "numpy", specifier = ">=2.3.3" },
-    { name = "pillow", specifier = ">=11.3.0" },
-    { name = "requests", specifier = ">=2.32.5" },
-    { name = "torch", specifier = ">=2.8.0" },
+sdist = { url = "https://files.pythonhosted.org/packages/ff/ff/2c6a5b8615637fea9fb00fac102729008246ef65696b5d9be91302d98162/prt_datasets-0.1.1.tar.gz", hash = "sha256:fd23bc65c35f886c3e0e774e237f66ee44216dd0022d814cd85b0df1f7679164", size = 20298 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/e0/0c9b17c2fefa978ac9f10aa25a2b3ab0e8ce59c8c336ae19ed8b80138319/prt_datasets-0.1.1-py3-none-any.whl", hash = "sha256:7f84e8fafce738f2b63c787de77019f63aa4eb8039c804d304991427497a43e3", size = 23542 },
 ]
-
-[package.metadata.requires-dev]
-dev = [{ name = "pytest", specifier = ">=8.4.2" }]
 
 [[package]]
 name = "prt-nn"
-version = "0.1.0"
-source = { editable = "../prt-nn" }
+version = "0.1.1"
+source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lightning" },
     { name = "torch" },
     { name = "torchmetrics", extra = ["detection"] },
     { name = "ultralytics" },
 ]
-
-[package.metadata]
-requires-dist = [
-    { name = "lightning", specifier = ">=2.5.5" },
-    { name = "torch", specifier = ">=2.8.0" },
-    { name = "torchmetrics", extras = ["detection"], specifier = ">=1.8.2" },
-    { name = "ultralytics", specifier = ">=8.3.204" },
+sdist = { url = "https://files.pythonhosted.org/packages/93/12/92146088f9171131e876ea8fbba4fe6e866b033a3b05b64580fef9d75530/prt_nn-0.1.1.tar.gz", hash = "sha256:210c6306831c911412c1b28ae5be29f113b631601cb8f3288ee863d82624059e", size = 11289 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b7/d1/e29342e827c582407fcb16982dce49d25dfc753809e183d0de7b5be5a046/prt_nn-0.1.1-py3-none-any.whl", hash = "sha256:5829149689f40dfec21d8549e3ce7d66f63c9191b4b6d7fde09333e436d198b9", size = 13837 },
 ]
 
 [[package]]
@@ -1363,8 +1351,8 @@ gymnasium = [
 requires-dist = [
     { name = "matplotlib", specifier = ">=3.10.1" },
     { name = "numpy", specifier = ">=2.2.3" },
-    { name = "prt-datasets", editable = "../prt-datasets" },
-    { name = "prt-nn", editable = "../prt-nn" },
+    { name = "prt-datasets", specifier = ">=0.1.1" },
+    { name = "prt-nn", specifier = ">=0.1.1" },
     { name = "pygame", specifier = ">=2.6.1" },
 ]
 
