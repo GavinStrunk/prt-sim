@@ -12,7 +12,6 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../src'))  # Source code dir relative to this file
-sys.path.insert(0, os.path.abspath('../demos'))
 
 # -- Project information -----------------------------------------------------
 project = 'Python Research Toolkit - Simulation'
@@ -34,8 +33,8 @@ extensions = [
     'sphinx.ext.napoleon',      # Allows for Google-style docstrings
     'sphinx.ext.mathjax',       # Formats LaTex code using Jax
     'myst_parser',              # Allows parsing of README.md file
-    'sphinxcontrib.mermaid',     # Allows for Mermaid diagrams to be rendered
-    "sphinx_design",            # Enhanced layout design
+    # 'sphinxcontrib.mermaid',     # Allows for Mermaid diagrams to be rendered
+    # "sphinx_design",            # Enhanced layout design
     "nbsphinx",                 # Rendering jupyter notebooks
 ]
 
