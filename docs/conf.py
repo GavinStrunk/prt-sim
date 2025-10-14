@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.abspath('../demos'))
 project = 'Python Research Toolkit - Simulation'
 copyright = '2025, Gavin Strunk'
 author = 'Gavin Strunk'
-version = "0.1.1"
+version = "0.1.2"
 release = version
 
 # -- General configuration ---------------------------------------------------
