@@ -14,6 +14,12 @@ from skimage.morphology import disk
 def exposure(image: torch.Tensor, p: torch.Tensor)-> torch.Tensor:
     """
     Exposure compensation.
+
+    Args:
+        image: Tensor of shape (3, H, W). Values typically in [0, 1]. dtype float.
+        p: Scalar or (B,) tensor with values in [-3.5, 3.5]
+    Returns:
+        Tensor of shape (B, 3, H, W), same dtype/device as img
     """
     if not -3.5 <= p <= 3.5:
         raise ValueError("p should be in the range [-3.5, 3.5]")
@@ -62,6 +68,15 @@ def white_balance(
     return image * gains
 
 def gamma_correction(image: torch.Tensor, gamma: torch.Tensor) -> torch.Tensor:
+    """
+    Gamma correction.
+    
+    Args:
+        image: Tensor of shape (B, 3, H, W). Values typically in [0, 1]. dtype float.
+        gamma: Scalar or (B,) tensor with values in [0.3333, 3.0]
+    Returns:
+        Tensor of shape (B, 3, H, W), same dtype/device as img.
+    """
     if not 0.3333 <= gamma <= 3.0:
         raise ValueError("gamma should be in the range [0.3333, 3.0]")
     return torch.pow(image, gamma)
@@ -404,6 +419,17 @@ class Toolbox:
         )
 
     def apply_algorithm(self, choice: torch.Tensor, params: torch.Tensor, image: torch.Tensor) -> torch.Tensor:
+        """
+        Apply the selected algorithm with given parameters to the image.
+
+        Args:
+            choice: Tensor of shape (,) with integer in [0, num_algorithms-1]
+            params: Tensor of shape (num_parameters,) with values in [0, 1]
+            image:  Tensor of shape (B, 3, H, W) with values in [0, 1]
+
+        Returns:
+            Processed image tensor of shape (B, 3, H, W) with values in [0, 1]
+        """
         # Get the algorithm choice
         alg, _ = self.algorithm_list[int(choice)]
 
