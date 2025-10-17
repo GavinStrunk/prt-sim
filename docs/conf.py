@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../src'))  # Source code dir relative to thi
 project = 'Python Research Toolkit - Simulation'
 copyright = '2025, Gavin Strunk'
 author = 'Gavin Strunk'
-version = "0.1.5"
+version = "0.1.6"
 release = version
 
 # -- General configuration ---------------------------------------------------
