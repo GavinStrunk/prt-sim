@@ -42,8 +42,8 @@ extensions = [
 intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
                        'numpy': ('https://numpy.org/doc/stable/', None),
                        'scipy': ('http://docs.scipy.org/doc/scipy/reference/', None),
-                       'matplotlib': ('http://matplotlib.org/', None),
-                       'torch': ('https://pytorch.org/docs/stable/', None),
+                       'matplotlib': ('https://matplotlib.org/stable/', None),
+                       'torch': ('https://docs.pytorch.org/docs/stable/', None),
                        }
 
 source_suffix = {
@@ -86,8 +86,8 @@ html_theme = "sphinx_book_theme"
 
 # Furo Theme
 # html_theme = "furo"
-html_logo = "_static/prt-sim-logo.jpg"
-html_favicon = "_static/prt-sim-logo.jpg"
+html_logo = "_static/prt-sim-logo-title.png"
+html_favicon = "_static/prt-sim-logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

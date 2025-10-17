@@ -11,5 +11,4 @@
    :template: toplevel-module-template.rst
    :recursive:
 
-	prt_rl
-    prt_sim
+   prt_sim
