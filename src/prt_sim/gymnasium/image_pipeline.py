@@ -160,14 +160,15 @@ class ImagePipeline(gym.Env):
         # If the done action is chosen, evaluate the terminal reward on the current image
         if algorithm == 0:
             next_state = self.current_image
-            reward = self._final_reward_function()
             terminated = True
         else:
             next_state = self.toolbox.apply_algorithm(choice=torch.tensor(algorithm), params=all_params, image=self.current_image.unsqueeze(0)).squeeze(0)
-            reward = self._reward_function(next_state)
+        
+        # Compute the reward for the next image
+        reward = self._reward_function(next_state)
 
-            # Image produced by the algorithm becomes the next state
-            self.current_image = next_state
+        # Image produced by the algorithm becomes the next state
+        self.current_image = next_state
 
         # The episode ends if the policy chooses to run the task algorithm or max steps reached
         self.steps += 1
@@ -223,6 +224,8 @@ class ImagePipeline(gym.Env):
             # Move image and labels to the device
             img = img.to(self.device)
             target = {k: v.squeeze(0).to(self.device) for k, v in target.items()}
+
+            # Need to apply the processing chain
 
             prediction = self.task_interface.detect(img)
             predictions.append(prediction[0])
