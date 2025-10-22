@@ -235,8 +235,12 @@ class ImagePipeline(gym.Env):
         return metrics.map_50_95
     
 if __name__ == "__main__":
-    from gymnasium.utils.env_checker import check_env
-    env = ImagePipeline(device='cuda')
-    state, info = env.reset()
-    # state, reward, terminated, truncated, info = env.step(env.action_space.sample())
-    check_env(env)
+    # from gymnasium.utils.env_checker import check_env
+    # env = ImagePipeline(device='cuda')
+    # state, info = env.reset()
+    # # state, reward, terminated, truncated, info = env.step(env.action_space.sample())
+    # check_env(env)
+
+    import gymnasium
+    env = gymnasium.make("PRT-SIM/ImagePipeline-v0")
+    print(env)
