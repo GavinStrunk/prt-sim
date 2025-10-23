@@ -10,6 +10,7 @@ from prt_sim.gymnasium.toolbox import Toolbox
 from prt_datasets.detection import BDD100KDataset
 from prt_nn.detection import YoloDetector, DetectorInterface
 
+
 class ImagePipeline(gym.Env):
     """
     A template Gymnasium environment that simulates an image-processing pipeline.
@@ -34,12 +35,14 @@ class ImagePipeline(gym.Env):
     def __init__(
         self,
         dataset_root: Path | None = None,
+        render_mode: Optional[str] = None,
         num_image_samples: int = 1,
         max_steps: int = 20,
         device: torch.device = torch.device("cpu"),
     ) -> None:
         super().__init__()
         self.dataset_root = dataset_root
+        self.render_mode = render_mode
         self.num_image_samples = num_image_samples
         self.max_steps = max_steps
         self.device = device
